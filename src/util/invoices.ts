@@ -47,6 +47,7 @@ export const invoices: Invoice[] = [
         },
         center: Center.HYDERABAD,
         package: "Basic",
+        status: false,
     },
     {
         id: "WG-120239222",
@@ -59,6 +60,7 @@ export const invoices: Invoice[] = [
         invoiceNumber: "100",
         invoiceDate: "12|08|24",
         dueDate: "12|08|24",
+        status: false,
         services: [
             {
                 name: "Car Wash",
