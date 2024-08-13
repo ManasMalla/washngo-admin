@@ -64,7 +64,7 @@ export default async function Receipt({ params, searchParams }) {
         authId={searchParams.authId}
       />
       <div className="flex justify-between items-center shadow-md w-full px-4">
-        <img src="/logo.svg" className="size-16" />
+        <img src="/Logo.svg" className="size-16" />
         <p>Invoice</p>
         <div></div>
         {/* <button className="bg-black px-3 py-1 rounded-full text-white text-sm">
@@ -85,7 +85,7 @@ export default async function Receipt({ params, searchParams }) {
               </span>
             </p>
             <div>
-              <img src="/logo.svg" className="max-h-20 mx-auto pt-4 px-6" />
+              <img src="/Logo.svg" className="max-h-20 mx-auto pt-4 px-6" />
               <p className="mt-2 text-[0.7rem] font-medium">
                 HYDERABAD | NELLORE | VIJAYAWADA
               </p>

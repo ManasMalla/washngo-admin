@@ -135,7 +135,7 @@ export default function GenerateReceipt({ searchParams }) {
   return (
     <div>
       <div className="flex justify-between items-center shadow-md w-full px-4">
-        <img src="/logo.svg" className="size-16" />
+        <img src="/Logo.svg" className="size-16" />
         <p>New Invoice</p>
         <button className="bg-black px-3 py-1 rounded-full text-white text-sm">
           menu
