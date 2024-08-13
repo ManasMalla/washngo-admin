@@ -30,6 +30,7 @@ export default function GenerateReceipt({ searchParams }) {
       year: "",
       color: "",
     },
+    status: false,
     notes: "",
     paymentDetails: {
       type: "Card",
