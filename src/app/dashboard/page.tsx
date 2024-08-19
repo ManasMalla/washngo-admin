@@ -35,7 +35,7 @@ export default async function DashboardPage({ searchParams }) {
       </div>
       <div className="px-5 py-6">
         <Link
-          href={"/receipt/new?authId" + searchParams.authId}
+          href={"/receipt/new?authId=" + searchParams.authId}
           className="absolute bottom-0 right-0 m-4 "
         >
           <button className="size-16 bg-black text-white rounded-xl shadow-lg">

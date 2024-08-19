@@ -12,8 +12,8 @@ const login = async (formData) => {
         return;
     }
     //Show toast
-    const username = formData.get("username");
-    const password = formData.get("password");
+    const username = formData.get("username").replaceAll(" ", "");
+    const password = formData.get("password").replaceAll(" ", "");
     await signInWithEmailAndPassword(auth, username, password)
         .then((userCredential) => {
             getDoc(doc(db, "users", userCredential.user.uid)).then((doc) => {
@@ -32,7 +32,7 @@ const login = async (formData) => {
                     e.code === "auth/invalid-credential" ||
                     e.code === "invalid-credential"
                 ) {
-                    alert("Invalid credentials");
+                    alert("Invalid credentials, error: " + e.message);
                 }
             }
         });
