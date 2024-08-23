@@ -15,6 +15,7 @@ import {
 } from "firebase/firestore";
 import FinishJobButton from "../../components/FinishJobButton";
 import Link from "next/link";
+import UpdatePaymentButton from "../../components/UpdatePaymentButton";
 
 export const revalidate = 60; // revalidate the data at most every hour
 
@@ -63,6 +64,11 @@ export default async function Receipt({ params, searchParams }) {
         status={data.status}
         id={docId}
         authId={searchParams.authId}
+      />
+      <UpdatePaymentButton
+        amount={data.paymentDetails.paid}
+        authId={searchParams.authId}
+        docId={docId}
       />
       <div className="flex justify-between items-center shadow-md w-full px-4">
         <img src="/Logo.svg" className="size-16" />
@@ -203,7 +209,18 @@ export default async function Receipt({ params, searchParams }) {
 
                 {
                   <tr>
-                    <td>Advance</td>
+                    <td>
+                      {subtotal -
+                        data.paymentDetails.paid +
+                        (isGSTBill
+                          ? isIGSTBill
+                            ? subtotal * 0.36
+                            : subtotal * 0.18
+                          : 0) ==
+                      0
+                        ? "Amount Paid"
+                        : "Advance"}
+                    </td>
                     <td className="text-end">-₹{data.paymentDetails.paid}</td>
                   </tr>
                 }
@@ -213,16 +230,25 @@ export default async function Receipt({ params, searchParams }) {
                     BALANCE
                   </td>
                   <td className="pl-2 text-end bg-neutral-100 font-bold">
-                    ₹
-                    {(
-                      subtotal -
+                    {subtotal -
                       data.paymentDetails.paid +
                       (isGSTBill
                         ? isIGSTBill
                           ? subtotal * 0.36
                           : subtotal * 0.18
-                        : 0)
-                    ).toFixed(2)}
+                        : 0) ==
+                    0
+                      ? "PAID"
+                      : "₹" +
+                        (
+                          subtotal -
+                          data.paymentDetails.paid +
+                          (isGSTBill
+                            ? isIGSTBill
+                              ? subtotal * 0.36
+                              : subtotal * 0.18
+                            : 0)
+                        ).toFixed(2)}
                   </td>
                 </tr>
                 <tr>
