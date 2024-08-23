@@ -75,10 +75,8 @@ export const invoices: Invoice[] = [
         ],
         license: "123456",
         carDetails: {
-            make: "Toyota",
             model: "Corolla",
             year: "2020",
-            color: "Red",
         },
         notes: "Thank you for your business!",
         paymentDetails: {
