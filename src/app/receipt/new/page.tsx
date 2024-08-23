@@ -25,10 +25,8 @@ export default function GenerateReceipt({ searchParams }) {
     services: [],
     license: "",
     carDetails: {
-      make: "",
       model: "",
       year: "",
-      color: "",
     },
     status: false,
     notes: "",
@@ -137,8 +135,13 @@ export default function GenerateReceipt({ searchParams }) {
       <div className="flex justify-between items-center shadow-md w-full px-4">
         <img src="/Logo.svg" className="size-16" />
         <p>New Invoice</p>
-        <button className="bg-black px-3 py-1 rounded-full text-white text-sm">
-          menu
+        <button
+          className="bg-black px-3 py-1 rounded-full text-white text-sm"
+          onClick={() => {
+            router.push("/dashboard?authId=" + authId);
+          }}
+        >
+          back
         </button>
       </div>
       <div>
@@ -221,18 +224,7 @@ export default function GenerateReceipt({ searchParams }) {
               required={true}
             />
           </div>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="carMake">Car Make:</label>
-            <input
-              type="text"
-              id="carMake"
-              name="carDetails.make"
-              value={invoiceData.carDetails.make}
-              onChange={handleChange}
-              className="border border-black px-6 py-2 rounded-lg"
-              required={true}
-            />
-          </div>
+
           <div className="flex flex-col gap-2">
             <label htmlFor="carModel">Car Model:</label>
             <input
@@ -257,18 +249,7 @@ export default function GenerateReceipt({ searchParams }) {
               required={true}
             />
           </div>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="carColor">Car Color:</label>
-            <input
-              type="text"
-              id="carColor"
-              name="carDetails.color"
-              value={invoiceData.carDetails.color}
-              onChange={handleChange}
-              className="border border-black px-6 py-2 rounded-lg"
-              required={true}
-            />
-          </div>
+
           <div className="flex flex-col gap-2">
             <label htmlFor="notes">Notes:</label>
             <textarea
@@ -422,8 +403,17 @@ export default function GenerateReceipt({ searchParams }) {
                 return;
               }
               addInvoice(timeId, invoiceData, () => {
-                router.push("/dashboard?authId=" + authId);
-                alert("Invoice added successfully");
+                const url =
+                  "https://helloworld-wlvhuppg6a-uc.a.run.app/helloworld?dest=" +
+                  invoiceData.email +
+                  "&invoiceNumber=" +
+                  invoiceData.invoiceNumber +
+                  "&authId=" +
+                  authId;
+                fetch(url).then((_) => {
+                  router.push("/dashboard?authId=" + authId);
+                  alert("Invoice added successfully");
+                });
               });
             }}
             className="bg-black text-white w-max px-6 py-2 rounded-xl"

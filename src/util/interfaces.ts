@@ -8,10 +8,8 @@ export interface Service {
 }
 
 export interface CarDetails {
-  make: string;
   model: string;
   year: string;
-  color: string;
 }
 
 export interface PaymentDetails {

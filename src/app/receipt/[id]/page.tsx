@@ -14,6 +14,7 @@ import {
   where,
 } from "firebase/firestore";
 import FinishJobButton from "../../components/FinishJobButton";
+import Link from "next/link";
 
 export const revalidate = 60; // revalidate the data at most every hour
 
@@ -67,9 +68,9 @@ export default async function Receipt({ params, searchParams }) {
         <img src="/Logo.svg" className="size-16" />
         <p>Invoice</p>
         <div></div>
-        {/* <button className="bg-black px-3 py-1 rounded-full text-white text-sm">
-          menu
-        </button> */}
+        {/* <Link href={""} className="bg-black px-3 py-1 rounded-full text-white text-sm">
+          back
+        </Link> */}
       </div>
       <div className="h-full px-2">
         <div className="outline grow my-4 md:mx-auto bg-white p-6">
@@ -138,17 +139,10 @@ export default async function Receipt({ params, searchParams }) {
                 <p> Year: </p>
                 <p className="field-underline">{data.carDetails.year}</p>
               </div>
-              <div className="w-full flex space-x-2">
-                <p> Make: </p>
-                <p className="field-underline">{data.carDetails.make}</p>
-              </div>
+
               <div className="w-full flex space-x-2">
                 <p> Model: </p>
                 <p className="field-underline">{data.carDetails.model}</p>
-              </div>
-              <div className="w-full flex space-x-2">
-                <p> Color: </p>
-                <p className="field-underline">{data.carDetails.color}</p>
               </div>
             </div>
             <table>
@@ -210,12 +204,14 @@ export default async function Receipt({ params, searchParams }) {
                 {
                   <tr>
                     <td>Advance</td>
-                    <td className="text-end">₹{data.paymentDetails.paid}</td>
+                    <td className="text-end">-₹{data.paymentDetails.paid}</td>
                   </tr>
                 }
 
                 <tr className="shrink-0">
-                  <td className="uppercase font-bold bg-neutral-200">TOTAL</td>
+                  <td className="uppercase font-bold bg-neutral-200">
+                    BALANCE
+                  </td>
                   <td className="pl-2 text-end bg-neutral-100 font-bold">
                     ₹
                     {(
@@ -231,9 +227,9 @@ export default async function Receipt({ params, searchParams }) {
                 </tr>
                 <tr>
                   <td colSpan={4}>
-                    Paid by: {data.paymentDetails.type}
+                    Pay by:{" "}
                     {data.paymentDetails["paymentMethodDetails"]
-                      ? ` - ${data.paymentDetails["paymentMethodDetails"]}`
+                      ? ` ${data.paymentDetails["paymentMethodDetails"]}`
                       : ""}
                   </td>
                 </tr>
