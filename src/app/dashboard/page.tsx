@@ -58,9 +58,8 @@ export default async function DashboardPage({ searchParams }) {
                     <p className="text-sm text-neutral-300">{invoice.id}</p>
                     <p>{invoice.license}</p>
                     <p className="text-lg font-medium">
-                      {invoice.carDetails.make} {invoice.carDetails.model}
+                      {invoice.carDetails.model}
                     </p>
-                    <p className="text-sm">{invoice.carDetails.color}</p>
                   </div>
                   <div className="flex flex-col">
                     <p className="font-medium">{invoice.package}</p>
