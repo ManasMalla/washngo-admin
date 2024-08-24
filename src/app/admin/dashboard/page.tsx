@@ -1,12 +1,12 @@
 import { redirect, useSearchParams } from "next/navigation";
-import { Center } from "../../util/centers_enum";
-import { Invoice } from "../../util/interfaces";
+import { Center } from "../../../util/centers_enum";
+import { Invoice } from "../../../util/interfaces";
 import Link from "next/link";
-import UserImage from "../components/UserImage";
+import UserImage from "../../components/UserImage";
 import { collection, getDocs } from "firebase/firestore";
 import { auth, db } from "../../../lib/firebase/config";
-import { invoices } from "../../util/invoices";
-import { saveInvoices } from "../../util/save_invoices";
+import { invoices } from "../../../util/invoices";
+import { saveInvoices } from "../../../util/save_invoices";
 
 async function getInvoices(authId: string) {
   var invoices: Invoice[] = [];
