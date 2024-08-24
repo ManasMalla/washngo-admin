@@ -58,6 +58,7 @@ export default async function Receipt({ params, searchParams }) {
   const isGSTBill = data.isGSTBill;
   const isIGSTBill = Center.HYDERABAD === data.center;
   const id = data.id;
+  
   return (
     <main className=" h-full font-['Poppins'] pb-8">
       <FinishJobButton
@@ -65,11 +66,13 @@ export default async function Receipt({ params, searchParams }) {
         id={docId}
         authId={searchParams.authId}
       />
-      <UpdatePaymentButton
-        amount={data.paymentDetails.paid}
-        authId={searchParams.authId}
-        docId={docId}
-      />
+      {
+        <UpdatePaymentButton
+          amount={data.paymentDetails.paid}
+          authId={searchParams.authId}
+          docId={docId}
+        />
+      }
       <div className="flex justify-between items-center shadow-md w-full px-4">
         <img src="/Logo.svg" className="size-16" />
         <p>Invoice</p>

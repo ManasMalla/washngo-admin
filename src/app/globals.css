@@ -23,3 +23,10 @@ td,th{
   border: 1px solid black;
   padding: 4px;
 }
+
+.text-shadow{
+  
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 14px; 
+  paint-order: stroke fill;
+}
