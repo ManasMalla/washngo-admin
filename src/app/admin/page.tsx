@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Center } from "../../util/centers_enum";
 import { redirect } from "next/navigation";
-import { auth } from "../../lib/firebase/config";
+import { auth } from "../../../lib/firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
 import { isUserLoggedIn, login } from "../../lib/login-validation";

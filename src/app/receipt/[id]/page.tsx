@@ -58,7 +58,7 @@ export default async function Receipt({ params, searchParams }) {
   const isGSTBill = data.isGSTBill;
   const isIGSTBill = Center.HYDERABAD === data.center;
   const id = data.id;
-  
+
   return (
     <main className=" h-full font-['Poppins'] pb-8">
       <FinishJobButton
