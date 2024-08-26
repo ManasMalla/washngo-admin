@@ -17,10 +17,10 @@ export default function Home() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 mt-8 items-center">
           {[
-            { name: "Beeramguda", placeId: "ChIJI5TKaXbzTDoRve9EGs1dw4Y" },
+            { name: "Beeramguda", placeId: "" },
             { name: "Nellore", placeId: "ChIJI5TKaXbzTDoRve9EGs1dw4Y" },
             { name: "Uppals", placeId: "ChIJDYl2OiWZyzsRHozGYJB-qUk" },
-            { name: "KSR Layout", placeId: "ChIJI5TKaXbzTDoRve9EGs1dw4Y" },
+            { name: "KSR Layout", placeId: "" },
             { name: "Miyapur", placeId: "ChIJccrMmluTyzsRbn4j0_5_KqE" },
           ].map((e) => {
             return (
@@ -36,9 +36,9 @@ export default function Home() {
                     e.placeId
                   }
                 ></iframe>
-                {/* <p className="px-4 py-1 bg-white w-max rounded-full absolute z-10 top-4 left-4 cursor-pointer">
+                <p className="px-4 py-1 bg-white w-max rounded-full absolute z-10 bottom-4 left-4 cursor-pointer">
                   {e.name}
-                </p> */}
+                </p>
               </div>
             );
           })}
