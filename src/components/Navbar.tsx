@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -14,20 +15,29 @@ export default function Navbar() {
       <div className="hidden md:flex items-center space-x-4">
         <button
           className="bg-black text-white px-6 py-2 rounded-full"
-          onClick={toggleMenu}
+          // onClick={toggleMenu}
         >
           {isOpen ? "close" : "menu"}
         </button>
-        <div className="size-10 border rounded-full border-black"></div>
-        <div className="size-10 border rounded-full border-black"></div>
+        <Link
+          href={"/#navigate"}
+          className="size-10 border rounded-full border-black flex items-center justify-center"
+        >
+          <img src="/icons/Send.svg" className="size-5" />
+        </Link>
+        <div className="size-10 border rounded-full border-black flex items-center justify-center">
+          <img src="/icons/Calling.svg" className="size-5" />
+        </div>
       </div>
 
-      <h3 className="text-2xl font-medium">Wash&Go</h3>
+      <Link href={"/"} className="text-2xl font-medium">
+        Wash&Go
+      </Link>
 
       <nav className="hidden md:flex space-x-4">
-        <button>Services</button>
+        <Link href={"/services"}>Services</Link>
         <button>Products</button>
-        <button>About</button>
+        <Link href={"/about"}>About</Link>
       </nav>
 
       <div className="md:hidden flex items-center space-x-4">
@@ -41,15 +51,21 @@ export default function Navbar() {
 
       {isOpen && (
         <div className="md:hidden absolute top-20 right-4 w-48 bg-white border border-neutral-200 rounded-xl p-2 space-y-2">
-          <button className="w-full hover:bg-neutral-200 py-2 px-4 rounded-xl text-left">
+          <Link
+            href={"/services"}
+            className="w-full hover:bg-neutral-200 py-2 px-4 rounded-xl text-left"
+          >
             Services
-          </button>
+          </Link>
           <button className="w-full hover:bg-neutral-200 py-2 px-4 rounded-xl text-left">
             Products
           </button>
-          <button className="w-full hover:bg-neutral-200 py-2 px-4 rounded-xl text-left">
+          <Link
+            href={"/about"}
+            className="w-full hover:bg-neutral-200 py-2 px-4 rounded-xl text-left"
+          >
             About
-          </button>
+          </Link>
         </div>
       )}
     </div>
