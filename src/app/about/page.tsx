@@ -27,7 +27,7 @@ export default function About() {
         </div>
         <div className="border border-black p-24 rounded-2xl flex gap-4 flex-col">
           <p>Clients</p>
-          <p className="text-7xl">1000+</p>
+          <p className="text-7xl">10L+</p>
         </div>
         <div className="border border-black p-24 rounded-2xl flex gap-4 flex-col">
           <p>Awards</p>
