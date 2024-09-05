@@ -56,24 +56,32 @@ export default function Services() {
           </div>
         </div>
       </div>
-      <Link
-        href={"/about"}
-        className="bg-[#F7F7F7] h-auto w-full rounded-2xl p-6 justify-between items-center flex flex-col"
-      >
-        <button className="bg-white px-4 py-2 rounded-full font-semibold flex items-center space-x-2 w-max">
-          <span>About</span>
-          <Image
-            src="/arrowd.png"
-            alt="arrow"
-            width={20}
-            height={20}
-            className="bg-neutral-300 rounded-full -rotate-[135deg]"
-          />
-        </button>
-        <p className="w-[28ch] text-center pt-6">
-          Experience the best & secure care for your car with us
+
+      <div className="w-full flex flex-col justify-between">
+        <Link
+          href={"/about"}
+          className="bg-[#F7F7F7] h-auto w-full rounded-2xl p-6 justify-between items-center flex flex-col"
+        >
+          <button className="bg-white px-4 py-2 rounded-full font-semibold flex items-center space-x-2 w-max">
+            <span>About</span>
+            <Image
+              src="/arrowd.png"
+              alt="arrow"
+              width={20}
+              height={20}
+              className="bg-neutral-300 rounded-full -rotate-[135deg]"
+            />
+          </button>
+          <p className="w-[28ch] text-center pt-6">
+            Experience the best & secure care for your car with us
+          </p>
+        </Link>
+        <p className="mt-4 text-center">
+          We're the <b>first</b> car detailing studio <br />
+          to introduce German Technology Machinery to <br />
+          Andhra Pradesh & Telangana
         </p>
-      </Link>
+      </div>
     </div>
   );
 }
