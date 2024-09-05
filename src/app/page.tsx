@@ -9,13 +9,17 @@ export default function Home() {
       <Illustration />
       <div className="flex space-x-2 mt-10 ml-7"></div>
       <Services />
-      <section id="navigate" className="md:p-16 pt-4">
+      <img
+        className="w-full h-[360px] object-cover"
+        src="https://raw.githubusercontent.com/TheAnanta/wash-and-go/main/pixelcut-export%20(1).jpeg?token=GHSAT0AAAAAACVCTQS67MUB4UJH32VCYLW2ZWZIOFA"
+      />
+      <section id="navigate" className="md:p-16 md:pt-8 pt-4">
         <p className="text-4xl">Our Services</p>
         <p className="md:w-[64ch] mt-4">
           We aim to provide the best Service in Fastest possible turnaround
           time, while keeping the costs affordable and economical.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-12">
           {[
             [
               "Ceramic Coating",
