@@ -15,7 +15,7 @@ export default function Home() {
           We aim to provide the best Service in Fastest possible turnaround
           time, while keeping the costs affordable and economical.
         </p>
-        <div className="grid grid-cols-3 gap-3 mt-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-12">
           {[
             [
               "Ceramic Coating",
