@@ -2,15 +2,15 @@ export default function Illustration() {
   return (
     <div className="relative md:px-16">
       <div className="flex justify-center items-center">
-        <div className="bg-neutral-200 h-96 w-[60%] rounded-full flex items-end justify-end mt-10 overflow-hidden">
+        <div className="h-96 w-[60%] flex items-end justify-end mt-10 rounded-full overflow-hidden">
           <img
-            src="https://static.wixstatic.com/media/451e97_3f90f634f4114571a6f8ec6c1630df89~mv2.jpg/v1/fill/w_556,h_366,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_auto/451e97_3f90f634f4114571a6f8ec6c1630df89~mv2.jpg"
+            src="https://renewdetailing.com/wp-content/uploads/2018/12/bigstock-198184441.jpg"
             className="w-full h-full object-cover"
           />
         </div>
       </div>
 
-      <div className="hidden md:flex flex-col items-start bg-white border p-6 border-neutral-300 rounded-3xl absolute left-[9%] top-6">
+      <div className="hidden md:flex flex-col items-start bg-white/20 border p-6 border-neutral-300/30 rounded-3xl absolute left-[9%] top-6">
         <div className="flex">
           <img
             className="bg-amber-400 w-12 h-12 rounded-full mr-4 object-cover"
@@ -71,7 +71,7 @@ export default function Illustration() {
         </h4>
       </div>
 
-      <div className="hidden p-6 md:flex flex-col bg-white border border-neutral-300 -top-7 right-[17%] rounded-3xl absolute ">
+      <div className="hidden p-6 md:flex flex-col bg-white/10 border border-neutral-300 -top-7 right-[17%] rounded-3xl absolute ">
         <div className="bg-[#9B9AD4] size-12 mb-3 rounded-full overflow-hidden">
           <img src="illustration.png" className="pt-1" />
         </div>

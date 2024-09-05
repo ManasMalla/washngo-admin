@@ -14,19 +14,22 @@ export default function Navbar() {
     <div className="flex w-full justify-between items-center p-8 max-h-14 flex-row-reverse">
       <div className="hidden md:flex items-center space-x-4">
         <button
-          className="bg-black text-white px-6 py-2 rounded-full"
+          className="bg-white text-black px-6 py-2 rounded-full"
           // onClick={toggleMenu}
         >
           {isOpen ? "close" : "menu"}
         </button>
         <Link
           href={"/#navigate"}
-          className="size-10 border rounded-full border-black flex items-center justify-center"
+          className="size-10 border rounded-full border-white flex items-center justify-center"
         >
           <img src="/icons/Send.svg" className="size-5" />
         </Link>
-        <div className="size-10 border rounded-full border-black flex items-center justify-center">
-          <img src="/icons/Calling.svg" className="size-5" />
+        <div className="size-10 border rounded-full border-white flex items-center justify-center">
+          <img
+            src="/icons/Calling.svg"
+            className="size-5 fill-white stroke-white"
+          />
         </div>
       </div>
 

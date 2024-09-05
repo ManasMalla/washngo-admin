@@ -4,11 +4,11 @@ import Link from "next/link";
 
 export default function Services() {
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-start lg:space-x-8 space-y-8 lg:space-y-0 md:px-16 pb-10 pt-2">
+    <div className="flex flex-col text-black lg:flex-row justify-between items-start lg:space-x-8 space-y-8 lg:space-y-0 md:px-16 pb-10 pt-2">
       {/* Service 1 */}
       <Link
-        href={"/services"}
-        className="bg-blue-100 min-h-64 h-auto w-full rounded-2xl p-6 justify-between flex flex-col cursor-pointer"
+        href={"/#services"}
+        className="bg-red-800 min-h-64 h-auto w-full rounded-2xl p-6 justify-between flex flex-col cursor-pointer"
       >
         <button className="bg-white px-4 py-2 rounded-full font-semibold flex items-center space-x-2 w-max">
           <span>Services</span>
@@ -35,7 +35,7 @@ export default function Services() {
         onClick={() => {
           alert("Coming soon.");
         }}
-        className="bg-yellow-100 min-h-64 h-auto w-full rounded-2xl p-6 justify-between flex flex-col cursor-pointer"
+        className="bg-red-300/30 min-h-64 h-auto w-full rounded-2xl p-6 justify-between flex flex-col cursor-pointer"
       >
         <button className="bg-white px-4 py-2 rounded-full font-semibold flex items-center space-x-2 w-max">
           <span>Products</span>
@@ -60,7 +60,7 @@ export default function Services() {
       <div className="w-full flex flex-col justify-between">
         <Link
           href={"/about"}
-          className="bg-[#F7F7F7] h-auto w-full rounded-2xl p-6 justify-between items-center flex flex-col"
+          className="bg-[#F7F7F7]/20 h-auto w-full rounded-2xl p-6 justify-between items-center flex flex-col"
         >
           <button className="bg-white px-4 py-2 rounded-full font-semibold flex items-center space-x-2 w-max">
             <span>About</span>
@@ -72,11 +72,11 @@ export default function Services() {
               className="bg-neutral-300 rounded-full -rotate-[135deg]"
             />
           </button>
-          <p className="w-[28ch] text-center pt-6">
+          <p className="w-[28ch] text-center pt-6 text-white">
             Experience the best & secure care for your car with us
           </p>
         </Link>
-        <p className="mt-4 text-center">
+        <p className="mt-4 text-center text-white">
           We're the <b>first</b> car detailing studio <br />
           to introduce German Technology Machinery to <br />
           Andhra Pradesh & Telangana
