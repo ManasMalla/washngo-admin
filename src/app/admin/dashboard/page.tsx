@@ -11,14 +11,28 @@ import { saveInvoices } from "../../../util/save_invoices";
 async function getInvoices(authId: string) {
   var invoices: Invoice[] = [];
   console.log(authId.replace("=", ""));
-  await getDocs(
-    collection(db, "users", authId.replace("=", ""), "invoices")
-  ).then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      console.log(doc.id);
-      invoices.push(doc.data() as Invoice);
+  if (localStorage.getItem("isAdmin") == "true") {
+    await getDocs(collection(db, "users")).then((querySnapshot) => {
+      querySnapshot.forEach(async (doc) => {
+        await getDocs(collection(doc.ref, "invoices")).then((querySnapshot) => {
+          querySnapshot.forEach((doc1) => {
+            console.log(doc1.id);
+            invoices.push(doc1.data() as Invoice);
+          });
+        });
+      });
     });
-  });
+  } else {
+    await getDocs(
+      collection(db, "users", authId.replace("=", ""), "invoices")
+    ).then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id);
+        invoices.push(doc.data() as Invoice);
+      });
+    });
+  }
+
   // saveInvoices(invoices);
   console.log(invoices);
   return invoices;

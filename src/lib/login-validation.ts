@@ -37,6 +37,9 @@ const login = async (formData) => {
             }
         });
     if (auth.currentUser) {
+        if (auth.currentUser.uid === "J9CNcDddLpOcNBMTYzrXcRaA5k32") {
+            localStorage.setItem("isAdmin", "true");
+        }
         redirect("/admin/dashboard?authId=" + auth.currentUser.uid);
     }
 };
