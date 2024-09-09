@@ -8,7 +8,7 @@ export default function Packages({
       name: "The Targaryen",
       subtitle: "Fire & Blood",
       image:
-        "https://github.com/TheAnanta/image-repository/blob/main/targaryen.jpg",
+        "https://raw.githubusercontent.com/TheAnanta/image-repository/main/targaryen.jpg",
       services: [
         "Engine Wash",
         "Underbody Wash",
@@ -219,16 +219,13 @@ export default function Packages({
           </p>
         </div>
         <p className="text-2xl my-8">Services included</p>
-        <div className="flex">
+        <div className="flex flex-col md:flex-row">
           <ul className="grow grid grid-cols-2 opacity-60 list-disc">
-            <li>Engine Wash</li>
-            <li>Underbody Wash</li>
-            <li>Full Body Foam Wash</li>
-            <li>Wheels / Alloys Cleaning</li>
-            <li>Tyre Polishing</li>
-            <li>Internal / External Window & Mirror Cleaning</li>
-            <li>Interior Vacuum</li>
-            <li>Dashboard Wipe</li>
+            {packageDets.services.map((service) => (
+              <li key={service} className="w-max">
+                <p>{service}</p>
+              </li>
+            ))}
           </ul>
           <div
             className="py-4 px-14 pb-8"
@@ -240,11 +237,11 @@ export default function Packages({
           >
             <p className="text-xl my-4">Add ons</p>
             <ul className="space-y-3 list-disc">
-              <li>Dashboard Cleaning</li>
-              <li>Dashboard Polishing</li>
-              <li>Doors cleaning</li>
-              <li>Doors Polishing</li>
-              <li>Car perfume spray</li>
+              {packageDets.addons.map((service) => (
+                <li key={service} className="w-max">
+                  <p>{service}</p>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
