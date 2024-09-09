@@ -12,7 +12,7 @@ export default function RedirectWidget() {
     onAuthStateChanged(auth, (user) => {
       isUserLoggedIn().then((isLoggedIn) => {
         if (isLoggedIn) {
-          router.push("/dashboard?authId=" + user.uid);
+          router.push("/admin/dashboard?authId=" + user.uid);
         }
       });
     });

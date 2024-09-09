@@ -1,6 +1,7 @@
 export default function About() {
   return (
     <div className="p-8">
+      <div className="h-20" />
       <h2 className="text-2xl">About us</h2>
       <h1 className="text-7xl font-bold my-3">
         Your trusted partner

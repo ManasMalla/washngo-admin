@@ -15,6 +15,7 @@ export default async function Home() {
 
   return (
     <main className="h-screen w-screen flex">
+      <div className="h-20" />
       <RedirectWidget />
       <div className="w-max h-max my-auto mx-auto">
         <img src="/Logo.svg" className="w-48 mx-auto" />

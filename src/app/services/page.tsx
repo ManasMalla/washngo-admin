@@ -3,6 +3,7 @@ import KnowMore from "../../components/know_more";
 export default function Services() {
   return (
     <div className="p-4 md:p-16">
+      <div className="h-10" />
       <p className="text-2xl">Our Services</p>
       <p className="md:w-[48ch] mb-8 mt-4">
         We aim to provide the best Service in Fastest possible turnaround time,
@@ -103,14 +104,14 @@ export default function Services() {
         ].map((e) => {
           return (
             <div key={e.name} className="border rounded-xl overflow-hidden">
-              {/* <img
-                src="https://github.com/manasmalla.png"
+              <img
+                src="https://zoomcarwash.com.au/wp-content/uploads/2022/10/How-To-Wash-A-Black-Car.jpg"
                 className="h-56 object-cover w-full"
-              /> */}
+              />
               <div className="p-8">
                 <p className="font-medium">{e.name}</p>
                 <p className="text-sm mt-1 opacity-50">{e.description}</p>
-                <KnowMore />
+                <KnowMore id={e.name.replaceAll(" ", "-").toLowerCase()} />
               </div>
             </div>
           );

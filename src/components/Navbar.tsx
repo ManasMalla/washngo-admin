@@ -11,7 +11,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="flex w-full justify-between items-center p-8 max-h-14 flex-row-reverse">
+    <div className="flex w-full justify-between items-center p-8 max-h-14 flex-row-reverse fixed top-0 bg-gradient-to-b from-black to-transparent z-20">
       <div className="hidden md:flex items-center space-x-4">
         <button
           className="bg-white text-black px-6 py-2 rounded-full"
@@ -38,8 +38,10 @@ export default function Navbar() {
       </Link>
 
       <nav className="hidden md:flex space-x-4">
+        <Link href={"/"}>Home</Link>
         <Link href={"/services"}>Services</Link>
         <button>Products</button>
+        <Link href={"/packages"}>Packages</Link>
         <Link href={"/about"}>About</Link>
       </nav>
 

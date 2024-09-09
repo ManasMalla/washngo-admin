@@ -37,7 +37,7 @@ const login = async (formData) => {
             }
         });
     if (auth.currentUser) {
-        redirect("/dashboard?authId=" + auth.currentUser.uid);
+        redirect("/admin/dashboard?authId=" + auth.currentUser.uid);
     }
 };
 

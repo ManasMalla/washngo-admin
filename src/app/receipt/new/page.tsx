@@ -138,7 +138,7 @@ export default function GenerateReceipt({ searchParams }) {
         <button
           className="bg-black px-3 py-1 rounded-full text-white text-sm"
           onClick={() => {
-            router.push("/dashboard?authId=" + authId);
+            router.push("/admin/dashboard?authId=" + authId);
           }}
         >
           back
@@ -411,7 +411,7 @@ export default function GenerateReceipt({ searchParams }) {
                   "&authId=" +
                   authId;
                 fetch(url).then((_) => {
-                  router.push("/dashboard?authId=" + authId);
+                  router.push("/admin/dashboard?authId=" + authId);
                   alert("Invoice added successfully");
                 });
               });

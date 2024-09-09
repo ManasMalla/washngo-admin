@@ -1,13 +1,12 @@
-"use client";
-export default function KnowMore() {
+import Link from "next/link";
+
+export default function KnowMore(props: { id: string }) {
   return (
-    <button
-      onClick={() => {
-        alert("Coming soon.");
-      }}
+    <Link
+      href={"/services/" + props.id}
       className="mt-2 text-sm uppercase font-medium"
     >
       Know more
-    </button>
+    </Link>
   );
 }

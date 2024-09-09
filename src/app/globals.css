@@ -25,8 +25,11 @@ td,th{
 }
 
 .text-shadow{
-  
   -webkit-text-stroke-color: white;
   -webkit-text-stroke-width: 14px; 
   paint-order: stroke fill;
+}
+
+.main-bg {
+  background: linear-gradient(113deg, #1D0B0D 10.64%, #050203 88.31%);
 }
