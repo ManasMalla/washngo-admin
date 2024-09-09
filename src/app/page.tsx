@@ -5,6 +5,8 @@ import AboutUs from "../components/AboutUs";
 import HeroCards from "../components/HeroCards";
 import Link from "next/link";
 import { use, useState } from "react";
+import { Dropdown, DropdownItem } from "flowbite-react";
+import { redirect } from "next/navigation";
 
 export default function Home() {
   const [selectedCenter, setSelectedCenter] = useState("Uppals");
@@ -90,8 +92,8 @@ export default function Home() {
         </div>
       </section>
       <section className="my-10">
-        <div className="flex px-6  gap-6">
-          <img src="/images/our-centers.svg" className="w-3/5" />
+        <div className="flex px-6 flex-col lg:flex-row  gap-6">
+          <img src="/images/our-centers.svg" className="lg:w-3/5" />
           <div className="grow space-y-4">
             {[
               [

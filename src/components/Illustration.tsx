@@ -4,8 +4,8 @@ export default function Illustration() {
       <div className="flex justify-center items-center">
         <div className="h-96 w-[60%] flex items-end justify-end mt-10 rounded-full overflow-hidden">
           <img
-            src="https://renewdetailing.com/wp-content/uploads/2018/12/bigstock-198184441.jpg"
-            className="w-full h-full object-cover"
+            src="https://noh2o.com/wp-content/uploads/2022/04/Exterior-Auto-Detailing.jpg"
+            className="w-full h-full object-cover saturate-0"
           />
         </div>
       </div>
@@ -13,7 +13,7 @@ export default function Illustration() {
       <div className="hidden md:flex flex-col items-start bg-white/20 border p-6 border-neutral-300/30 rounded-3xl absolute left-[9%] top-6">
         <div className="flex">
           <img
-            className="bg-amber-400 w-12 h-12 rounded-full mr-4 object-cover"
+            className="bg-amber-400 w-12 h-12 rounded-full mr-4 object-cover saturate-0"
             src="https://github.com/SampathBalivada.png"
           />
           <div>

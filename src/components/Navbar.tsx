@@ -1,6 +1,8 @@
 "use client";
 
+import { Dropdown } from "flowbite-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -9,9 +11,15 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
+  const path = usePathname();
   return (
-    <div className="flex w-full justify-between items-center p-8 max-h-14 flex-row-reverse fixed top-0 bg-gradient-to-b from-black to-transparent z-20">
+    <div
+      className={`flex w-full justify-between items-center p-8 max-h-14 flex-row-reverse fixed top-0 ${
+        path.includes("packages")
+          ? "bg-transparent"
+          : "bg-gradient-to-b from-black to-transparent"
+      } z-20`}
+    >
       <div className="hidden md:flex items-center space-x-4">
         <button
           className="bg-white text-black px-6 py-2 rounded-full"
@@ -37,11 +45,30 @@ export default function Navbar() {
         Wash&Go
       </Link>
 
-      <nav className="hidden md:flex space-x-4">
+      <nav className="hidden md:flex space-x-4 items-center">
         <Link href={"/"}>Home</Link>
         <Link href={"/services"}>Services</Link>
         <button>Products</button>
-        <Link href={"/packages"}>Packages</Link>
+        <Dropdown label={"Packages"} dismissOnClick={true}>
+          {[
+            "THE TARGARYEN",
+            "THE LANNISTER",
+            "THE STARK",
+            "THE VALE",
+            "THE NARCOS",
+            "THE PROFESSOR",
+          ].map((packageName) => (
+            <Dropdown.Item
+              as={"a"}
+              href={"/packages/" + packageName.split(" ")[1].toLowerCase()}
+            >
+              {packageName
+                .split(" ")
+                .map((e) => e.substring(0, 1) + e.substring(1).toLowerCase())
+                .join(" ")}
+            </Dropdown.Item>
+          ))}
+        </Dropdown>
         <Link href={"/about"}>About</Link>
       </nav>
 
