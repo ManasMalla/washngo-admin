@@ -82,7 +82,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden absolute top-20 right-4 w-48 bg-white border border-neutral-200 rounded-xl p-2 space-y-2">
+        <div className="md:hidden absolute top-20 right-4 w-48 border bg-black border-neutral-200 rounded-xl p-2 space-y-2">
           <Link
             href={"/services"}
             className="w-full hover:bg-neutral-200 py-2 px-4 rounded-xl text-left"
@@ -92,6 +92,31 @@ export default function Navbar() {
           <button className="w-full hover:bg-neutral-200 py-2 px-4 rounded-xl text-left">
             Products
           </button>
+          <Dropdown
+            label={"Packages"}
+            dismissOnClick={true}
+            className="bg-black text-white rounded-xl"
+          >
+            {[
+              "THE TARGARYEN",
+              "THE LANNISTER",
+              "THE STARK",
+              "THE VALE",
+              "THE NARCOS",
+              "THE PROFESSOR",
+            ].map((packageName) => (
+              <Dropdown.Item
+                as={"a"}
+                className="py-3 w-48"
+                href={"/packages/" + packageName.split(" ")[1].toLowerCase()}
+              >
+                {packageName
+                  .split(" ")
+                  .map((e) => e.substring(0, 1) + e.substring(1).toLowerCase())
+                  .join(" ")}
+              </Dropdown.Item>
+            ))}
+          </Dropdown>
           <Link
             href={"/about"}
             className="w-full hover:bg-neutral-200 py-2 px-4 rounded-xl text-left"
