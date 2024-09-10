@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
           {!isAdminRoute && <Navbar />}
           {children}
         </div>
-        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
       </body>
     </html>
   );

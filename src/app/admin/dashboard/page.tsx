@@ -1,3 +1,4 @@
+"use client";
 import { redirect, useSearchParams } from "next/navigation";
 import { Center } from "../../../util/centers_enum";
 import { Invoice } from "../../../util/interfaces";
@@ -7,30 +8,33 @@ import { collection, getDocs } from "firebase/firestore";
 import { auth, db } from "../../../lib/firebase/config";
 import { invoices } from "../../../util/invoices";
 import { saveInvoices } from "../../../util/save_invoices";
+import { useState, useEffect } from "react";
 
-async function getInvoices(authId: string) {
+function getInvoices(authId: string, setInvoices: any) {
   var invoices: Invoice[] = [];
   console.log(authId.replace("=", ""));
-  if (localStorage.getItem("isAdmin") == "true") {
-    await getDocs(collection(db, "users")).then((querySnapshot) => {
-      querySnapshot.forEach(async (doc) => {
-        await getDocs(collection(doc.ref, "invoices")).then((querySnapshot) => {
+  if (authId === "J9CNcDddLpOcNBMTYzrXcRaA5k32") {
+    getDocs(collection(db, "users")).then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        getDocs(collection(doc.ref, "invoices")).then((querySnapshot) => {
           querySnapshot.forEach((doc1) => {
             console.log(doc1.id);
             invoices.push(doc1.data() as Invoice);
+            setInvoices(invoices);
           });
         });
       });
     });
   } else {
-    await getDocs(
-      collection(db, "users", authId.replace("=", ""), "invoices")
-    ).then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        console.log(doc.id);
-        invoices.push(doc.data() as Invoice);
-      });
-    });
+    getDocs(collection(db, "users", authId.replace("=", ""), "invoices")).then(
+      (querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          console.log(doc.id);
+          invoices.push(doc.data() as Invoice);
+          setInvoices(invoices);
+        });
+      }
+    );
   }
 
   // saveInvoices(invoices);
@@ -38,12 +42,24 @@ async function getInvoices(authId: string) {
   return invoices;
 }
 
-export default async function DashboardPage({ searchParams }) {
-  const invoices = await getInvoices(searchParams.authId);
+export default function DashboardPage({ searchParams }) {
+  const [invoices, setInvoices] = useState<Invoice[]>([]);
+  useEffect(() => {
+    getInvoices(searchParams.authId, setInvoices);
+  }, []);
   return (
     <div className="h-screen">
       <div className="flex justify-between items-center shadow-md w-full px-4">
         <img src="/Logo.svg" className="size-16" />
+        <button
+          onClick={() => {
+            auth.signOut().then(() => {
+              redirect("/admin");
+            });
+          }}
+        >
+          sign out
+        </button>
         {/* <p>Wash & Go</p> */}
         {/* <UserImage /> */}
       </div>
@@ -74,6 +90,7 @@ export default async function DashboardPage({ searchParams }) {
                     <p className="text-lg font-medium">
                       {invoice.carDetails.model}
                     </p>
+                    <p>{invoice.servicePerson.name}</p>
                   </div>
                   <div className="flex flex-col">
                     <p className="font-medium">{invoice.package}</p>
