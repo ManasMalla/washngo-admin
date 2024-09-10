@@ -9,6 +9,7 @@ import { auth, db } from "../../../lib/firebase/config";
 import { invoices } from "../../../util/invoices";
 import { saveInvoices } from "../../../util/save_invoices";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 function getInvoices(authId: string, setInvoices: any) {
   var invoices: Invoice[] = [];
@@ -44,6 +45,7 @@ function getInvoices(authId: string, setInvoices: any) {
 
 export default function DashboardPage({ searchParams }) {
   const [invoices, setInvoices] = useState<Invoice[]>([]);
+  const router = useRouter();
   useEffect(() => {
     getInvoices(searchParams.authId, setInvoices);
   }, []);
@@ -54,7 +56,7 @@ export default function DashboardPage({ searchParams }) {
         <button
           onClick={() => {
             auth.signOut().then(() => {
-              redirect("/admin");
+              router.push("/admin");
             });
           }}
         >
