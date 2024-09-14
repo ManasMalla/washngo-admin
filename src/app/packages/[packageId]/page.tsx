@@ -227,24 +227,27 @@ export default function Packages({
               </li>
             ))}
           </ul>
-          <div
-            className="py-4 px-14 pb-8"
-            style={{
-              borderRadius: "24px",
-              background: "rgba(255, 255, 255, 0.2)",
-              backdropFilter: "blur(15px)",
-            }}
-          >
-            <p className="text-xl my-4">Add ons</p>
-            <ul className="space-y-3 list-disc">
-              {packageDets.addons.map((service) => (
-                <li key={service} className="w-max">
-                  <p>{service}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {params.packageId == "targaryen" && (
+            <div
+              className="py-4 px-14 pb-8"
+              style={{
+                borderRadius: "24px",
+                background: "rgba(255, 255, 255, 0.2)",
+                backdropFilter: "blur(15px)",
+              }}
+            >
+              <p className="text-xl my-4">Add ons</p>
+              <ul className="space-y-3 list-disc">
+                {packageDets.addons.map((service) => (
+                  <li key={service} className="w-max">
+                    <p>{service}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
+        <div className="h-12" />
       </div>
     </div>
   );

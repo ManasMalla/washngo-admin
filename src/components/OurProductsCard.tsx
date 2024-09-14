@@ -1,10 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function Component() {
   return (
-    <div
-      onClick={() => {
-        alert("Coming soon.");
-      }}
+    <Link
+      href="#products"
       className="bg-[#FF9980]/90 min-h-64 h-auto w-full md:w-1/3 rounded-2xl p-6 justify-between flex flex-col cursor-pointer aspect-[1.45]"
     >
       <button className="bg-white px-4 py-2 rounded-full font-semibold flex items-center space-x-2 w-max">
@@ -23,6 +22,6 @@ export default function Component() {
           <Image src="/share.png" alt="share" width={20} height={20} />
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

@@ -14,41 +14,46 @@ export default function Navbar() {
   const path = usePathname();
   return (
     <div
-      className={`flex w-full justify-between items-center p-8 max-h-14 flex-row-reverse fixed top-0 ${
+      className={`flex w-full justify-between items-center p-8 max-h-14 py-12 md:py-8 flex-row-reverse fixed top-0 ${
         path.includes("packages")
           ? "bg-transparent"
           : "bg-gradient-to-b from-black to-transparent"
       } z-20`}
     >
-      <div className="hidden md:flex items-center space-x-4">
-        <button
-          className="bg-white text-black px-6 py-2 rounded-full"
+      <div className="flex items-center space-x-4">
+        <Link
+          href={"/about"}
+          className="bg-white md:flex hidden text-black px-6 py-2 rounded-full"
           // onClick={toggleMenu}
         >
-          {isOpen ? "close" : "menu"}
-        </button>
+          about
+        </Link>
         <Link
           href={"/#navigate"}
           className="size-10 border rounded-full border-white flex items-center justify-center"
         >
           <img src="/icons/Send.svg" className="size-5" />
         </Link>
-        <div className="size-10 border rounded-full border-white flex items-center justify-center">
+        <Link
+          href={"tel:+91 99598 07722"}
+          className="size-10 border rounded-full border-white flex items-center justify-center cursor-pointer"
+        >
           <img
             src="/icons/Calling.svg"
             className="size-5 fill-white stroke-white"
           />
-        </div>
+        </Link>
       </div>
 
-      <Link href={"/"} className="text-2xl font-medium">
-        Wash&Go
-      </Link>
+      <img
+        src="/logo_colored.svg"
+        className="h-9 absolute hidden md:flex md:top-5 w-full pointer-events-none"
+      />
 
       <nav className="hidden md:flex space-x-4 items-center">
         <Link href={"/"}>Home</Link>
         <Link href={"/services"}>Services</Link>
-        <button>Products</button>
+        <Link href={"/#products"}>Products</Link>
         <Dropdown label={"Packages"} dismissOnClick={true}>
           {[
             "THE TARGARYEN",
@@ -69,12 +74,20 @@ export default function Navbar() {
             </Dropdown.Item>
           ))}
         </Dropdown>
-        <Link href={"/about"}>About</Link>
+        <div
+          onClick={() => {
+            alert("Coming soon.");
+          }}
+          className="cursor-pointer"
+        >
+          Franchise
+        </div>
       </nav>
 
       <div className="md:hidden flex items-center space-x-4">
+        <img src="/logo-circle.svg" className="h-9 md:hidden w-full" />
         <button
-          className="bg-black text-white px-6 py-2 rounded-full"
+          className="bg-white text-black px-6 py-2 rounded-full"
           onClick={toggleMenu}
         >
           {isOpen ? "close" : "menu"}
@@ -84,12 +97,18 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden absolute top-20 right-4 w-48 border bg-black border-neutral-200 rounded-xl p-2 space-y-2">
           <Link
+            href={"/"}
+            className="w-full block hover:bg-neutral-200/20 py-2 px-4 rounded-xl text-left"
+          >
+            Home
+          </Link>
+          <Link
             href={"/services"}
-            className="w-full hover:bg-neutral-200 py-2 px-4 rounded-xl text-left"
+            className="w-full hover:bg-neutral-200/20 py-2 px-4 rounded-xl text-left"
           >
             Services
           </Link>
-          <button className="w-full hover:bg-neutral-200 py-2 px-4 rounded-xl text-left">
+          <button className="w-full hover:bg-neutral-200/20 py-2 px-4 rounded-xl text-left">
             Products
           </button>
           <Dropdown
@@ -119,10 +138,18 @@ export default function Navbar() {
           </Dropdown>
           <Link
             href={"/about"}
-            className="w-full hover:bg-neutral-200 py-2 px-4 rounded-xl text-left"
+            className="w-full hover:bg-neutral-200/20 py-2 px-4 rounded-xl text-left"
           >
             About
           </Link>
+          <div
+            onClick={() => {
+              alert("Coming soon.");
+            }}
+            className="w-full hover:bg-neutral-200/20 py-2 px-4 rounded-xl text-left"
+          >
+            Franchise
+          </div>
         </div>
       )}
     </div>
