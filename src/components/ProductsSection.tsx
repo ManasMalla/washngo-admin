@@ -36,7 +36,7 @@ export default function ProductsSection() {
             ))}
           </ul>
         </div>
-        <img src="/images/our-products-group.svg" className="lg:w-1/3" />
+        {/* <img src="/images/our-products-group.svg" className="lg:w-1/3" /> */}
       </div>
     </section>
   );

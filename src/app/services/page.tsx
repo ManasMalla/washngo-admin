@@ -50,8 +50,8 @@ export default function Services() {
             name: "Graphene coating",
             description:
               "An advanced, high-tech coating that offers exceptional protection and durability for your car's paintwork.",
-            image:
-              "https://www.carzspa.com/wp-content/uploads/2024/02/graphene-ceramic-coating-placed.webp",
+            // image:
+            // "https://www.carzspa.com/wp-content/uploads/2024/02/graphene-ceramic-coating-placed.webp",
           },
           {
             name: "Ceramic maintenance",
