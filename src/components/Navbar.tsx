@@ -37,7 +37,7 @@ export default function Navbar() {
             <img src="/icons/Send.svg" className="size-5" />
           </Link>
           <Link
-            href={"tel:+91 99598 07722"}
+            href={"tel:+91 99595 55577"}
             className="size-10 border rounded-full border-white flex items-center justify-center cursor-pointer"
           >
             <img
