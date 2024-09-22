@@ -18,7 +18,7 @@ export default async function Home() {
       <div className="h-20" />
       <RedirectWidget />
       <div className="w-max h-max my-auto mx-auto">
-        <img src="/Logo.svg" className="w-48 mx-auto" />
+        <img src="/full-width-logo.svg" className="w-48 mx-auto" />
 
         <form className="p-8 flex flex-col gap-2">
           <h2>Login</h2>

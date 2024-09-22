@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  background: #000000;
+  background-image: linear-gradient(113deg, #1D0B0D 5.64%, #050203 88.31%);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

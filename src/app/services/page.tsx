@@ -10,7 +10,7 @@ export default function Services() {
         maintenance to premium detailing. Our team ensures your vehicle stays in
         top condition, inside and out.
       </p>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
         {[
           {
             name: "Car Foam wash",
@@ -106,11 +106,15 @@ export default function Services() {
             name: "Yearly Package For Wash",
             description:
               "A package offering regular car washes throughout the year for convenience and savings.",
+            image:
+              "https://carfixo.in/wp-content/uploads/2022/05/car-wash-2.jpg",
           },
           {
             name: "Annual Maintenance Package",
             description:
               "A comprehensive package including various maintenance services for your car on an annual basis.",
+            image:
+              "https://goma.co.in/uploads/systems/a16fcca3d8660ac1f66bc3e2c4759849.jpg",
           },
           {
             name: "Denting",

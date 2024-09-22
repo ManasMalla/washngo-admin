@@ -52,7 +52,7 @@ export default function DashboardPage({ searchParams }) {
   return (
     <div className="h-screen">
       <div className="flex justify-between items-center shadow-md w-full px-4">
-        <img src="/Logo.svg" className="size-16" />
+        <img src="/full-width-logo.svg" className="size-16" />
         <button
           onClick={() => {
             auth.signOut().then(() => {

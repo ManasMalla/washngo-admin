@@ -13,7 +13,6 @@ import AddressSection from "../components/AddressSection";
 export default function Home() {
   return (
     <div className="p-4 md:p-[unset]">
-      <div className="h-20" />
       <Title />
       <Illustration />
       <div className="flex space-x-2 mt-10 ml-7"></div>
