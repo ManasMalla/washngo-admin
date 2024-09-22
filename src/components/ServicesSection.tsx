@@ -18,23 +18,30 @@ export function ServicesSection() {
           </p>
           <ul className="list-disc">
             {[
-              "Ceramic Coating",
-              "Paint Protection Film",
-              "Sun Film",
-              "SRS Treatment",
-              "Glass Restoration Treatment for Anti-Glare",
-              "Complete Interior Detailing with Steam",
-              "Car Foam Wash",
-              "Sanitisation of Complete Car Interiors",
+              { name: "Ceramic Coating" },
+              { name: "Paint Protection Film" },
+              { name: "Sun Films" },
+              { name: "SRS Treatment" },
+              { name: "Glass Restoration Treatment for Anti-Glare" },
+              {
+                name: "Complete Interior Detailing with Steam",
+                id: "interior-deep-cleaning",
+              },
+              { name: "Car Foam Wash" },
+              {
+                name: "Sanitisation of Complete Car Interiors",
+                id: "interior-deep-cleaning",
+              },
             ].map((service) => (
-              <li key={service} className="w-max">
+              <li key={service.name} className="w-max">
                 <Link
                   href={
-                    "/services/" + service.replaceAll(" ", "-").toLowerCase()
+                    "/services/" + service.id ??
+                    service.name.replaceAll(" ", "-").toLowerCase()
                   }
                 >
                   <div className="flex gap-2 my-8 w-max">
-                    <p>{service}</p>
+                    <p>{service.name}</p>
                     <img src="icons/Arrow - Right Circle.svg" />
                   </div>
                 </Link>

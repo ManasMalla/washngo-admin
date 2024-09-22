@@ -82,7 +82,7 @@ export default async function Receipt({ params, searchParams }) {
         </Link> */}
       </div>
       <div className="h-full px-2">
-        <div className="outline grow my-4 md:mx-auto bg-white p-6">
+        <div className="outline grow my-4 md:mx-auto p-6">
           <p className="absolute uppercase text-sm">Car Detailing Receipt</p>
           <div className="flex text-center text-sm mt-2 shrink-0 whitespace-nowrap">
             <p className="shrink-0 pt-8 grow text-start">
@@ -95,7 +95,10 @@ export default async function Receipt({ params, searchParams }) {
               </span>
             </p>
             <div>
-              <img src="/Logo.svg" className="max-h-20 mx-auto pt-4 px-6" />
+              <img
+                src="/full-width-logo.svg"
+                className="max-h-20 mx-auto pt-4 px-6"
+              />
               <p className="mt-2 text-[0.7rem] font-medium">
                 HYDERABAD | NELLORE | VIJAYAWADA
               </p>
@@ -177,7 +180,7 @@ export default async function Receipt({ params, searchParams }) {
                 <tr>
                   <td
                     colSpan={2}
-                    rowSpan={isGSTBill ? (isIGSTBill ? 6 : 5) : 3}
+                    rowSpan={isGSTBill ? (isIGSTBill ? 7 : 6) : 4}
                     className="h-full"
                   >
                     Note: {data.notes}
@@ -209,7 +212,22 @@ export default async function Receipt({ params, searchParams }) {
                     )}
                   </>
                 )}
-
+                {
+                  <tr>
+                    <td className="bg-white text-black font-bold">
+                      {"GRAND TOTAL"}
+                    </td>
+                    <td className="text-end bg-white text-black font-bold">
+                      ₹
+                      {subtotal +
+                        (isGSTBill
+                          ? isIGSTBill
+                            ? subtotal * 0.36
+                            : subtotal * 0.18
+                          : 0)}
+                    </td>
+                  </tr>
+                }
                 {
                   <tr>
                     <td>
@@ -229,10 +247,8 @@ export default async function Receipt({ params, searchParams }) {
                 }
 
                 <tr className="shrink-0">
-                  <td className="uppercase font-bold bg-neutral-200">
-                    BALANCE
-                  </td>
-                  <td className="pl-2 text-end bg-neutral-100 font-bold">
+                  <td className="uppercase font-bold bg-red-500">BALANCE</td>
+                  <td className="pl-2 text-end font-bold bg-red-300 text-black">
                     {subtotal -
                       data.paymentDetails.paid +
                       (isGSTBill

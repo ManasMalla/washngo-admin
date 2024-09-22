@@ -168,7 +168,7 @@ export default function Page({ params }: { params: { id: string } }) {
         "https://cftproducts.com/wp-content/uploads/2022/02/graphene-coating.jpg",
     },
     {
-      name: "PPF",
+      name: "Paint Protection Film",
       description:
         "Paint Protection Film (PPF) is a clear, durable film applied to your vehicle’s exterior to protect against scratches, chips, and other damage caused by daily driving.\n\n" +
         "PPF is virtually invisible and comes with self-healing properties that can remove minor scratches automatically when exposed to heat.\n\n" +

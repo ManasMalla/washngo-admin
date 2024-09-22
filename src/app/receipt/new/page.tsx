@@ -57,6 +57,7 @@ export default function GenerateReceipt({ searchParams }) {
     "Ceramic maintenance",
     "Graphene Maintenance",
     "PPF",
+    "Glass Coating",
     "Wrapping",
     "Sun films",
     "Head Light Restoration",
@@ -66,7 +67,7 @@ export default function GenerateReceipt({ searchParams }) {
     "Denting",
     "Painting",
     "Car Accessories",
-  ];
+  ].toSorted();
 
   const [newService, setNewService] = useState({
     name: "",
@@ -237,7 +238,7 @@ export default function GenerateReceipt({ searchParams }) {
               required={true}
             />
           </div>
-          <div className="flex flex-col gap-2">
+          {/* <div className="flex flex-col gap-2">
             <label htmlFor="carYear">Car Year:</label>
             <input
               type="text"
@@ -248,7 +249,7 @@ export default function GenerateReceipt({ searchParams }) {
               className="border border-black px-6 py-2 rounded-lg"
               required={true}
             />
-          </div>
+          </div> */}
 
           <div className="flex flex-col gap-2">
             <label htmlFor="notes">Notes:</label>
@@ -287,7 +288,7 @@ export default function GenerateReceipt({ searchParams }) {
             />
           </div> */}
           <div className="flex flex-col gap-2">
-            <label htmlFor="paid">Paid:</label>
+            <label htmlFor="paid">Advance Paid:</label>
             <input
               type="number"
               id="paid"
@@ -327,7 +328,7 @@ export default function GenerateReceipt({ searchParams }) {
               </select>
 
               <div className="flex flex-col">
-                <label
+                {/* <label
                   className="text-[0.6rem]"
                   htmlFor="quantity"
                   title="Quantity"
@@ -340,7 +341,7 @@ export default function GenerateReceipt({ searchParams }) {
                   value={newService.quantity}
                   onChange={handleServiceChange}
                   className="border h-full border-black px-6 py-2 rounded-lg"
-                />
+                /> */}
               </div>
               <div className="flex flex-col">
                 <label htmlFor="price" className="text-[0.6rem]" title="Price">
@@ -416,7 +417,7 @@ export default function GenerateReceipt({ searchParams }) {
                 });
               });
             }}
-            className="bg-black text-white w-max px-6 py-2 rounded-xl"
+            className="bg-white text-black mx-auto w-max px-6 py-2 rounded-xl"
           >
             Submit
           </button>

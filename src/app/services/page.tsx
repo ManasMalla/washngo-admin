@@ -68,7 +68,7 @@ export default function Services() {
               "https://cftproducts.com/wp-content/uploads/2022/02/graphene-coating.jpg",
           },
           {
-            name: "PPF",
+            name: "Paint Protection Film",
             description:
               "A protective film applied to your car's paint to shield it from scratches, chips, and other damage.",
             image:

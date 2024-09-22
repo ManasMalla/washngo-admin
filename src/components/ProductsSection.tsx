@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ProductsSection() {
   return (
-    <section id="products">
+    <section id="products" className="px-6">
       <div className="flex flex-col lg:flex-row overflow-hidden">
         <div className="p-4 mx-auto my-auto">
           <p className="uppercase text-lg md:text-xl text-[#e94218]">
@@ -16,7 +16,7 @@ export default function ProductsSection() {
             performance, protection, and style—everything you need for a
             superior driving experience.
           </p>
-          <div className="w-full inline-flex flex-nowrap md:justify-start  [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+          <div className="my-6 mt-12 w-full inline-flex flex-nowrap md:justify-start  [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
             <div className="flex animate-infinite-scroll items-center justify-center ">
               {[
                 "https://i.pinimg.com/originals/c4/50/b7/c450b77567a7f7149b71f92f49b89854.png",

@@ -24,6 +24,11 @@ export interface ServicePerson {
   phone: string;
 }
 
+export interface SignedInvoice {
+  invoice: Invoice;
+  authId: string;
+}
+
 export interface Invoice {
   id: string;
   invoiceData: string;
